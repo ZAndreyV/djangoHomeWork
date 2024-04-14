@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <h2>Текущие данные</h2>
+    <div>Наименование: {{ product.title }} </div>
+    <div>Описание: {{ product.description }} </div>
+    <div>Цена: {{ product.price }} </div>
+    <div>Количество: {{ product.quantity }} </div>
+
+    <p>
+    {% if product.img %}
+        <img src="{{ product.img.url }}" alt="IMG">
+    {% else %}
+        <p>Изображение не загружено</p>
+    {% endif %}
+    </p>
+
+    <h2>{{ title }}</h2>
+    {% if form %}
+        {% include 'homeWork4/form.html' %}
+    {% else %}
+        <h3>В переданном контексте формы не обнаружено</h3>
+    {% endif %}
+{% endblock %}

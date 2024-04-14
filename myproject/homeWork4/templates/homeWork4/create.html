@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    {% if form %}
+        {% include 'homeWork4/form.html' %}
+    {% else %}
+        <h3>Контекст формы не был передан</h3>
+    {% endif %}
+{% endblock %}
